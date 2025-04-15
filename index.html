@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter Deluxe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen">
+            <h1>Space Shooter Deluxe</h1>
+            <p>Defend the galaxy against alien invaders!</p>
+            <div class="difficulty-selector">
+                <p>Select Difficulty:</p>
+                <div class="difficulty-buttons">
+                    <button id="easy-button" class="difficulty-btn selected">Easy</button>
+                    <button id="medium-button" class="difficulty-btn">Medium</button>
+                    <button id="hard-button" class="difficulty-btn">Hard</button>
+                </div>
+            </div>
+            <div class="ship-selector">
+                <p>Select Ship:</p>
+                <div class="ship-options">
+                    <div class="ship-option selected" data-ship="blue">
+                        <div class="ship-preview blue-ship"></div>
+                        <span>Blue Fighter</span>
+                    </div>
+                    <div class="ship-option" data-ship="red">
+                        <div class="ship-preview red-ship"></div>
+                        <span>Red Striker</span>
+                    </div>
+                    <div class="ship-option" data-ship="green">
+                        <div class="ship-preview green-ship"></div>
+                        <span>Green Scout</span>
+                    </div>
+                </div>
+            </div>
+            <button id="start-button">Start Game</button>
+            <button id="high-scores-button">High Scores</button>
+        </div>
+        
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen hidden">
+            <div class="game-stats">
+                <div class="score-container">Score: <span id="score">0</span></div>
+                <div class="level-container">Level: <span id="level">1</span></div>
+                <div class="lives-container">Lives: <span id="lives">3</span></div>
+                <div class="power-container">Power: <span id="power-level">0</span></div>
+            </div>
+            <canvas id="game-canvas" width="800" height="600"></canvas>
+            <div class="controls-info">
+                <div class="control-item">
+                    <span>Movement</span>
+                    <span>Arrow Keys or WASD</span>
+                </div>
+                <div class="control-item">
+                    <span>Shoot</span>
+                    <span>Spacebar</span>
+                </div>
+                <div class="control-item">
+                    <span>Special</span>
+                    <span>E or Shift</span>
+                </div>
+                <div class="control-item">
+                    <span>Pause</span>
+                    <span>P or Escape</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Game Over Screen -->
+        <div id="game-over-screen" class="screen hidden">
+            <h1>Game Over</h1>
+            <p>Final Score: <span id="final-score">0</span></p>
+            <div id="new-high-score" class="hidden">
+                <h2>New High Score!</h2>
+                <input type="text" id="player-name" placeholder="Enter your name" maxlength="10">
+                <button id="save-score-button">Save Score</button>
+            </div>
+            <button id="restart-button">Play Again</button>
+            <button id="main-menu-button">Main Menu</button>
+        </div>
+        
+        <!-- Pause Screen -->
+        <div id="pause-screen" class="screen hidden">
+            <h1>Game Paused</h1>
+            <button id="resume-button">Resume Game</button>
+            <button id="quit-button">Quit Game</button>
+        </div>
+        
+        <!-- High Scores Screen -->
+        <div id="high-scores-screen" class="screen hidden">
+            <h1>High Scores</h1>
+            <div id="scores-list" class="scores-list">
+                <!-- Scores will be populated here -->
+            </div>
+            <button id="back-button">Back to Menu</button>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
